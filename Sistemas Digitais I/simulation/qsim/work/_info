@@ -1,0 +1,434 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Void/Documents/Fei Codigos/Sistemas_Digitais/simulation/qsim
+vCodificador_Niveis
+Z1 !s110 1746811882
+!i10b 1
+!s100 Hk7`f=DPhbOZUcI6@bYi>3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IM[_zCczEcWQOP@T1;UX?O1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1746811881
+Z4 8Projeto2.vo
+Z5 FProjeto2.vo
+!i122 6
+L0 32 126
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1746811882.000000
+Z8 !s107 Projeto2.vo|
+Z9 !s90 -work|work|Projeto2.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@codificador_@niveis
+Ecodificador_niveis
+Z12 w1746811559
+Z13 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z14 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 OTUTkBjTeYVegmIWhVi3N0
+Z15 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z16 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z17 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z18 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 C5K^h=:j[4HI?HO^UkN3:2
+!i122 2
+R0
+Z19 8Projeto2.vho
+Z20 FProjeto2.vho
+l0
+L35 1
+Vodhcb:`deL[Q>b7_UO`442
+!s100 SOgG7h39FR=am;O7ES3lL3
+Z21 OV;C;2020.1;71
+32
+Z22 !s110 1746811560
+!i10b 1
+Z23 !s108 1746811560.000000
+Z24 !s90 -work|work|Projeto2.vho|
+Z25 !s107 Projeto2.vho|
+!i113 1
+R10
+Z26 tExplicit 1 CvgOpt 0
+Astructure
+R13
+R14
+R15
+R16
+R17
+R18
+DEx4 work 18 codificador_niveis 0 22 odhcb:`deL[Q>b7_UO`442
+!i122 2
+l73
+L47 136
+VW7^k@S2no3AT;Z>VPJYNH3
+!s100 05@6k9?Zi:IB^UlSbij^I2
+R21
+32
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R10
+R26
+Ecodificador_niveis_vhd_vec_tst
+Z27 w1746811558
+R16
+R17
+!i122 3
+R0
+Z28 8Waveform.vwf.vht
+Z29 FWaveform.vwf.vht
+l0
+L32 1
+V8dRVOf;AOQPO_UeE8DX[K3
+!s100 ]8T:in[fJ[QdS80_[o3ZO1
+R21
+32
+R22
+!i10b 1
+R23
+Z30 !s90 -work|work|Waveform.vwf.vht|
+Z31 !s107 Waveform.vwf.vht|
+!i113 1
+R10
+R26
+Acodificador_niveis_arch
+R16
+R17
+DEx4 work 30 codificador_niveis_vhd_vec_tst 0 22 8dRVOf;AOQPO_UeE8DX[K3
+!i122 3
+l55
+L34 62
+V?bmIkTEeGZCmRY3?Chj>B2
+!s100 5ZIz;zz0JEZ>z]K8njZc43
+R21
+32
+R22
+!i10b 1
+R23
+R30
+R31
+!i113 1
+R10
+R26
+vCodificador_Niveis_vlg_vec_tst
+R1
+!i10b 1
+!s100 =kBeTzP[iY67PWfc=zUBH2
+R2
+IDX0H6=>=9Ze>`iOOgbTQ[0
+R3
+R0
+w1746811880
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+!i122 7
+L0 30 64
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R10
+R11
+n@codificador_@niveis_vlg_vec_tst
+vDecodificadorHEX1
+Z32 !s110 1747159360
+!i10b 1
+!s100 2L2Vz9zAX6Jdm=mRR[j7<3
+R2
+IN3HOAl;^TdBbVi@9VA?Y81
+R3
+R0
+w1747159359
+R4
+R5
+!i122 24
+L0 32 273
+R6
+r1
+!s85 0
+31
+Z33 !s108 1747159360.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@decodificador@h@e@x1
+vDecodificadorHEX1_vlg_vec_tst
+R32
+!i10b 1
+!s100 onnDQ[[nMJAhem36MFhSM2
+R2
+I]fCk5=7N:QUO8=jHVE]oQ1
+R3
+R0
+w1747159358
+8Waveform9.vwf.vt
+FWaveform9.vwf.vt
+!i122 25
+Z34 L0 30 86
+R6
+r1
+!s85 0
+31
+R33
+!s107 Waveform9.vwf.vt|
+!s90 -work|work|Waveform9.vwf.vt|
+!i113 1
+R10
+R11
+n@decodificador@h@e@x1_vlg_vec_tst
+vDecodificadorHEX2
+Z35 !s110 1747158415
+!i10b 1
+!s100 U4g96;Izg:jdGQgnOAMR20
+R2
+IV4?<R64C`b5V]zaMGfD:i2
+R3
+R0
+w1747158414
+R4
+R5
+!i122 16
+L0 32 205
+R6
+r1
+!s85 0
+31
+Z36 !s108 1747158415.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@decodificador@h@e@x2
+vDecodificadorHEX2_vlg_vec_tst
+R35
+!i10b 1
+!s100 60MegCKQlI?c>C>0dkH0P1
+R2
+I1SWTVfVbfhzUP2PK4jZS]0
+R3
+R0
+w1747158413
+8Waveform6.vwf.vt
+FWaveform6.vwf.vt
+!i122 17
+R34
+R6
+r1
+!s85 0
+31
+R36
+!s107 Waveform6.vwf.vt|
+!s90 -work|work|Waveform6.vwf.vt|
+!i113 1
+R10
+R11
+n@decodificador@h@e@x2_vlg_vec_tst
+vDMUX
+Z37 !s110 1746812123
+!i10b 1
+!s100 ]_jlb^>TW0gff=6BdQ_;T3
+R2
+IcTlFYNHL<TOc[_4k`zc[52
+R3
+R0
+w1746812122
+R4
+R5
+!i122 8
+L0 32 344
+R6
+r1
+!s85 0
+31
+Z38 !s108 1746812123.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@d@m@u@x
+vDMUX_vlg_vec_tst
+R37
+!i10b 1
+!s100 gUAG2:`k1z3[@2`nDTcMS3
+R2
+I9HZSgIV:zcGo6>:>;0Lg`2
+R3
+R0
+w1746812121
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+!i122 9
+R34
+R6
+r1
+!s85 0
+31
+R38
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 1
+R10
+R11
+n@d@m@u@x_vlg_vec_tst
+vHEX0
+Z39 !s110 1747345945
+!i10b 1
+!s100 a4kF>XMHm;niQ_hB3MAJz3
+R2
+IM8CCQH1Bc6PcmHeRBPP>`2
+R3
+R0
+w1747345944
+R4
+R5
+!i122 36
+L0 32 276
+R6
+r1
+!s85 0
+31
+Z40 !s108 1747345945.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@h@e@x0
+vHEX0_vlg_vec_tst
+R39
+!i10b 1
+!s100 GkR=J4JNBUljajji<ZA<:3
+R2
+IH4`_Rg5ck5GFATB[WeX:]0
+R3
+R0
+w1747345943
+8Waveform14.vwf.vt
+FWaveform14.vwf.vt
+!i122 37
+L0 30 78
+R6
+r1
+!s85 0
+31
+R40
+!s107 Waveform14.vwf.vt|
+!s90 -work|work|Waveform14.vwf.vt|
+!i113 1
+R10
+R11
+n@h@e@x0_vlg_vec_tst
+vSistema
+Z41 !s110 1747404679
+!i10b 1
+!s100 @U>AXk:l=bIRzGF0<mmcL0
+IS7d4L?Eb7;1dmOOElCkPH3
+R3
+Z42 dC:/Users/uniepvalerio/Downloads/Sistemas_Digitais/Sistemas_Digitais/simulation/qsim
+w1747404677
+R4
+R5
+L0 32
+Z43 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z44 !s108 1747404679.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@sistema
+vSistema_vlg_vec_tst
+R41
+!i10b 1
+!s100 m[]Q@gUimKo:S=@eMTQn62
+IkSN5bYGG^4iF^R:T4OfRK0
+R3
+R42
+w1747404675
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R43
+r1
+!s85 0
+31
+R44
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+n@sistema_vlg_vec_tst
+vSomador
+Z45 !s110 1746812293
+!i10b 1
+!s100 J>]C]:ANZ_;]YKNfXej1X0
+R2
+IEE`0Z5P]kAcX:I5DNNR3c2
+R3
+R0
+w1746812292
+R4
+R5
+!i122 10
+L0 32 157
+R6
+r1
+!s85 0
+31
+Z46 !s108 1746812293.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@somador
+vSomador_vlg_vec_tst
+R45
+!i10b 1
+!s100 k:7aSR@MljHIa002Z[;gQ1
+R2
+I?S3H6]AfNRz`_R^G>AQG:1
+R3
+R0
+w1746812291
+8Waveform4.vwf.vt
+FWaveform4.vwf.vt
+!i122 11
+L0 30 80
+R6
+r1
+!s85 0
+31
+R46
+!s107 Waveform4.vwf.vt|
+!s90 -work|work|Waveform4.vwf.vt|
+!i113 1
+R10
+R11
+n@somador_vlg_vec_tst

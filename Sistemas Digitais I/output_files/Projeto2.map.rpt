@@ -1,0 +1,675 @@
+Analysis & Synthesis report for Projeto2
+Fri May 23 11:28:23 2025
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Sistema|EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ST
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Parameter Settings for User Entity Instance: Somador:inst2|74283:inst1
+ 14. Port Connectivity Checks: "EIXO_X:inst7|LIMITADOR_3B:LIMITADOR"
+ 15. Port Connectivity Checks: "EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR"
+ 16. Port Connectivity Checks: "EIXO_X:inst7|ACELEROMETRO:SENSOR"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 23 11:28:23 2025       ;
+; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name                      ; Projeto2                                    ;
+; Top-level Entity Name              ; Sistema                                     ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 172                                         ;
+;     Total combinational functions  ; 164                                         ;
+;     Dedicated logic registers      ; 80                                          ;
+; Total registers                    ; 80                                          ;
+; Total pins                         ; 44                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                                      ; Sistema            ; Projeto2           ;
+; Family name                                                                ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                      ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; DMUX.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/DMUX.bdf               ;         ;
+; Somador.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/Somador.bdf            ;         ;
+; Codificador_Niveis.bdf           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/Codificador_Niveis.bdf ;         ;
+; Sistema.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/Sistema.bdf            ;         ;
+; DecodificadorHEX1.bdf            ; yes             ; User Block Diagram/Schematic File  ; C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/DecodificadorHEX1.bdf  ;         ;
+; DecodificadorHEX2.bdf            ; yes             ; User Block Diagram/Schematic File  ; C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/DecodificadorHEX2.bdf  ;         ;
+; HEX0.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/HEX0.bdf               ;         ;
+; 16dmux.bdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/16dmux.bdf                               ;         ;
+; eixo_x.vhd                       ; yes             ; Auto-Found VHDL File               ; C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd             ;         ;
+; 74283.tdf                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74283.tdf                                ;         ;
+; aglobal.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal.inc                                ;         ;
+; f74283.bdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/f74283.bdf                               ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 172       ;
+;                                             ;           ;
+; Total combinational functions               ; 164       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 70        ;
+;     -- 3 input functions                    ; 73        ;
+;     -- <=2 input functions                  ; 21        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 151       ;
+;     -- arithmetic mode                      ; 13        ;
+;                                             ;           ;
+; Total registers                             ; 80        ;
+;     -- Dedicated logic registers            ; 80        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 44        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 79        ;
+; Total fan-out                               ; 848       ;
+; Average fan-out                             ; 2.55      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                   ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                  ; Entity Name        ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------+--------------------+--------------+
+; |Sistema                              ; 164 (0)             ; 80 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |Sistema                                                             ; Sistema            ; work         ;
+;    |DMUX:inst1|                       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|DMUX:inst1                                                  ; DMUX               ; work         ;
+;    |DecodificadorHEX1:inst5|          ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|DecodificadorHEX1:inst5                                     ; DecodificadorHEX1  ; work         ;
+;    |EIXO_X:inst7|                     ; 149 (0)             ; 80 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|EIXO_X:inst7                                                ; EIXO_X             ; work         ;
+;       |ACELEROMETRO:SENSOR|           ; 129 (0)             ; 80 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|EIXO_X:inst7|ACELEROMETRO:SENSOR                            ; ACELEROMETRO       ; work         ;
+;          |GERADOR_CLOCK_100K:CLOCK_2| ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|EIXO_X:inst7|ACELEROMETRO:SENSOR|GERADOR_CLOCK_100K:CLOCK_2 ; GERADOR_CLOCK_100K ; work         ;
+;          |Temporizador2:TEMP|         ; 7 (7)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|EIXO_X:inst7|ACELEROMETRO:SENSOR|Temporizador2:TEMP         ; Temporizador2      ; work         ;
+;          |UC3E:UCR|                   ; 105 (105)           ; 66 (66)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR                   ; UC3E               ; work         ;
+;       |LIMITADOR_3B:LIMITADOR|        ; 20 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|EIXO_X:inst7|LIMITADOR_3B:LIMITADOR                         ; LIMITADOR_3B       ; work         ;
+;    |HEX0:inst6|                       ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Sistema|HEX0:inst6                                                  ; HEX0               ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Sistema|EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ST                                                                                                                                                                                                                         ;
++--------------+------+--------------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+------+------+------+------+------+
+; Name         ; ST.J ; ST.FULL_DATA ; ST.IZ1 ; ST.HZ1 ; ST.GZ1 ; ST.FZ1 ; ST.IZ0 ; ST.HZ0 ; ST.GZ0 ; ST.FZ0 ; ST.IY1 ; ST.HY1 ; ST.GY1 ; ST.FY1 ; ST.IY0 ; ST.HY0 ; ST.GY0 ; ST.FY0 ; ST.IX1 ; ST.HX1 ; ST.GX1 ; ST.FX1 ; ST.IX0 ; ST.HX0 ; ST.GX0 ; ST.FX0 ; ST.E ; ST.D ; ST.C ; ST.B ; ST.A ;
++--------------+------+--------------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+------+------+------+------+------+
+; ST.A         ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 0    ;
+; ST.B         ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 1    ; 1    ;
+; ST.C         ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 1    ; 0    ; 1    ;
+; ST.D         ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 1    ; 0    ; 0    ; 1    ;
+; ST.E         ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1    ; 0    ; 0    ; 0    ; 1    ;
+; ST.FX0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.GX0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.HX0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.IX0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.FX1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.GX1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.HX1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.IX1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.FY0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.GY0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.HY0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.IY0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.FY1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.GY1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.HY1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.IY1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.FZ0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.GZ0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.HZ0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.IZ0       ; 0    ; 0            ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.FZ1       ; 0    ; 0            ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.GZ1       ; 0    ; 0            ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.HZ1       ; 0    ; 0            ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.IZ1       ; 0    ; 0            ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.FULL_DATA ; 0    ; 1            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; ST.J         ; 1    ; 0            ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0    ; 0    ; 0    ; 0    ; 1    ;
++--------------+------+--------------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+------+------+------+------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                 ;
++-----------------------------------------------------+------------------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                                  ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------------------------+------------------------+
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[7]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[6]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[8]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[9]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[5]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[4]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[3]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[2]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[1]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|LIMITADOR_3B:LIMITADOR|TEMP[0]         ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[7]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[6]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[8]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[9]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[5]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[4]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[3]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[2]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[1]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|ACC_X[0]  ; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|DATA_READY ; yes                    ;
+; Number of user-specified and inferred latches = 20  ;                                                      ;                        ;
++-----------------------------------------------------+------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                              ;
++--------------------------------------------------------------+------------------------------------------------------------------+
+; Register name                                                ; Reason for Removal                                               ;
++--------------------------------------------------------------+------------------------------------------------------------------+
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[16]         ; Stuck at GND due to stuck port data_in                           ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY_OUT[0..3]   ; Stuck at VCC due to stuck port data_in                           ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY_OUT[4,8]    ; Stuck at GND due to stuck port data_in                           ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[6,8..11,13] ; Stuck at GND due to stuck port data_in                           ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[1,2]        ; Stuck at VCC due to stuck port data_in                           ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[0]          ; Stuck at GND due to stuck port data_in                           ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[7]          ; Merged with EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[3]  ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[4,5]        ; Merged with EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[12] ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[15]         ; Stuck at GND due to stuck port data_in                           ;
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|MEMORY[14]         ; Stuck at VCC due to stuck port data_in                           ;
+; Total Number of Removed Registers = 21                       ;                                                                  ;
++--------------------------------------------------------------+------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 80    ;
+; Number of registers using Synchronous Clear  ; 14    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 55    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Inverted Register Statistics                             ;
++------------------------------------------------+---------+
+; Inverted Register                              ; Fan out ;
++------------------------------------------------+---------+
+; EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR|SCLK ; 2       ;
+; Total number of inverted registers = 1         ;         ;
++------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Somador:inst2|74283:inst1 ;
++------------------------+--------+--------------------------------------+
+; Parameter Name         ; Value  ; Type                                 ;
++------------------------+--------+--------------------------------------+
+; DEVICE_FAMILY          ; MAX 10 ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON     ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF    ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON     ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF    ; IGNORE_CASCADE                       ;
++------------------------+--------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "EIXO_X:inst7|LIMITADOR_3B:LIMITADOR" ;
++------+-------+----------+---------------------------------------+
+; Port ; Type  ; Severity ; Details                               ;
++------+-------+----------+---------------------------------------+
+; rst  ; Input ; Info     ; Stuck at VCC                          ;
++------+-------+----------+---------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR"                                            ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; acc_x0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; acc_x1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; acc_y0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; acc_y1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; acc_z0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; acc_z1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "EIXO_X:inst7|ACELEROMETRO:SENSOR"                                                            ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; rst           ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; r[1]          ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; r[0]          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; acc_x[15..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; acc_y         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; acc_z         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 44                          ;
+; cycloneiii_ff         ; 80                          ;
+;     CLR               ; 6                           ;
+;     ENA               ; 41                          ;
+;     ENA SCLR          ; 14                          ;
+;     plain             ; 19                          ;
+; cycloneiii_lcell_comb ; 171                         ;
+;     arith             ; 13                          ;
+;         2 data inputs ; 13                          ;
+;     normal            ; 158                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 73                          ;
+;         4 data inputs ; 70                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.96                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Fri May 23 11:28:03 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto2 -c Projeto2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file dmux.bdf
+    Info (12023): Found entity 1: DMUX
+Info (12021): Found 1 design units, including 1 entities, in source file somador.bdf
+    Info (12023): Found entity 1: Somador
+Info (12021): Found 1 design units, including 1 entities, in source file codificador_niveis.bdf
+    Info (12023): Found entity 1: Codificador_Niveis
+Warning (12019): Can't analyze file -- file Projeto2.bdf is missing
+Info (12021): Found 1 design units, including 1 entities, in source file sistema.bdf
+    Info (12023): Found entity 1: Sistema
+Warning (12019): Can't analyze file -- file Decodificador Hex1.bdf is missing
+Warning (12019): Can't analyze file -- file Decodificador Hex2.bdf is missing
+Warning (12019): Can't analyze file -- file Decodificador_Hex1.bdf is missing
+Warning (12019): Can't analyze file -- file Decodificador_Hex2.bdf is missing
+Info (12021): Found 1 design units, including 1 entities, in source file decodificadorhex1.bdf
+    Info (12023): Found entity 1: DecodificadorHEX1
+Info (12021): Found 1 design units, including 1 entities, in source file decodificadorhex2.bdf
+    Info (12023): Found entity 1: DecodificadorHEX2
+Info (12021): Found 1 design units, including 1 entities, in source file hex0.bdf
+    Info (12023): Found entity 1: HEX0
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_simulacao.bdf
+    Info (12023): Found entity 1: Sistema_Simulacao
+Info (12127): Elaborating entity "Sistema" for the top level hierarchy
+Info (12128): Elaborating entity "DMUX" for hierarchy "DMUX:inst1"
+Info (12128): Elaborating entity "16dmux" for hierarchy "DMUX:inst1|16dmux:inst"
+Info (12130): Elaborated megafunction instantiation "DMUX:inst1|16dmux:inst"
+Info (12128): Elaborating entity "Codificador_Niveis" for hierarchy "Codificador_Niveis:inst"
+Warning (12125): Using design file eixo_x.vhd, which is not specified as a design file for the current project, but contains definitions for 12 design units and 6 entities in project
+    Info (12022): Found design unit 1: EIXO_X-ESTRUTURAL File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 26
+    Info (12022): Found design unit 2: ACELEROMETRO-ESTRUTURAL File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 89
+    Info (12022): Found design unit 3: UC3E-FSM File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 148
+    Info (12022): Found design unit 4: Temporizador2-FSM File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 479
+    Info (12022): Found design unit 5: GERADOR_CLOCK_100K-COMPORTAMENTAL File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 509
+    Info (12022): Found design unit 6: LIMITADOR_3B-RTL File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 571
+    Info (12023): Found entity 1: EIXO_X File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 18
+    Info (12023): Found entity 2: ACELEROMETRO File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 77
+    Info (12023): Found entity 3: UC3E File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 133
+    Info (12023): Found entity 4: Temporizador2 File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 473
+    Info (12023): Found entity 5: GERADOR_CLOCK_100K File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 503
+    Info (12023): Found entity 6: LIMITADOR_3B File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 563
+Info (12128): Elaborating entity "EIXO_X" for hierarchy "EIXO_X:inst7"
+Critical Warning (10920): VHDL Incomplete Partial Association warning at eixo_x.vhd(51): port or argument "ACC_X" has 6/16 unassociated elements File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 51
+Info (12128): Elaborating entity "ACELEROMETRO" for hierarchy "EIXO_X:inst7|ACELEROMETRO:SENSOR" File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 51
+Warning (10036): Verilog HDL or VHDL warning at eixo_x.vhd(92): object "ACC_X0" assigned a value but never read File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 92
+Warning (10036): Verilog HDL or VHDL warning at eixo_x.vhd(92): object "ACC_X1" assigned a value but never read File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 92
+Warning (10036): Verilog HDL or VHDL warning at eixo_x.vhd(92): object "ACC_Y0" assigned a value but never read File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 92
+Warning (10036): Verilog HDL or VHDL warning at eixo_x.vhd(92): object "ACC_Y1" assigned a value but never read File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 92
+Warning (10036): Verilog HDL or VHDL warning at eixo_x.vhd(92): object "ACC_Z0" assigned a value but never read File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 92
+Warning (10036): Verilog HDL or VHDL warning at eixo_x.vhd(92): object "ACC_Z1" assigned a value but never read File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 92
+Info (12128): Elaborating entity "UC3E" for hierarchy "EIXO_X:inst7|ACELEROMETRO:SENSOR|UC3E:UCR" File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(173): signal "CLOCK_EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(439): signal "ACC_X0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 439
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(439): signal "ACC_X1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 439
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(440): signal "ACC_X0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 440
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(440): signal "ACC_X1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 440
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(441): signal "ACC_X0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 441
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(441): signal "ACC_X1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 441
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(442): signal "ACC_X0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 442
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(442): signal "ACC_X1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 442
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(443): signal "ACC_X0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 443
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(443): signal "ACC_X1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 443
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(444): signal "ACC_X0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 444
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(444): signal "ACC_X1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 444
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(445): signal "ACC_X0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 445
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(445): signal "ACC_X1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 445
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(446): signal "ACC_X0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 446
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(446): signal "ACC_X1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 446
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(447): signal "ACC_Y0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 447
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(447): signal "ACC_Y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 447
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(448): signal "ACC_Y0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 448
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(448): signal "ACC_Y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 448
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(449): signal "ACC_Y0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 449
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(449): signal "ACC_Y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 449
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(450): signal "ACC_Y0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 450
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(450): signal "ACC_Y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 450
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(451): signal "ACC_Y0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 451
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(451): signal "ACC_Y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 451
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(452): signal "ACC_Y0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 452
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(452): signal "ACC_Y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 452
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(453): signal "ACC_Y0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 453
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(453): signal "ACC_Y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 453
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(454): signal "ACC_Y0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 454
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(454): signal "ACC_Y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 454
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(455): signal "ACC_Z0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 455
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(455): signal "ACC_Z1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 455
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(456): signal "ACC_Z0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 456
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(456): signal "ACC_Z1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 456
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(457): signal "ACC_Z0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 457
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(457): signal "ACC_Z1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 457
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(458): signal "ACC_Z0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 458
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(458): signal "ACC_Z1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 458
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(459): signal "ACC_Z0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 459
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(459): signal "ACC_Z1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 459
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(460): signal "ACC_Z0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 460
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(460): signal "ACC_Z1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 460
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(461): signal "ACC_Z0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 461
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(461): signal "ACC_Z1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 461
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(462): signal "ACC_Z0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 462
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(462): signal "ACC_Z1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 462
+Warning (10631): VHDL Process Statement warning at eixo_x.vhd(433): inferring latch(es) for signal or variable "ACC_X", which holds its previous value in one or more paths through the process File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Warning (10631): VHDL Process Statement warning at eixo_x.vhd(433): inferring latch(es) for signal or variable "ACC_Y", which holds its previous value in one or more paths through the process File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Warning (10631): VHDL Process Statement warning at eixo_x.vhd(433): inferring latch(es) for signal or variable "ACC_Z", which holds its previous value in one or more paths through the process File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Warning (10873): Using initial value X (don't care) for net "MEMORY_OUT[9..16]" at eixo_x.vhd(157) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 157
+Info (10041): Inferred latch for "ACC_Z[0]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[1]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[2]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[3]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[4]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[5]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[6]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[7]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[8]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[9]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[10]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[11]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[12]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[13]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[14]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Z[15]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[0]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[1]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[2]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[3]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[4]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[5]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[6]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[7]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[8]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[9]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[10]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[11]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[12]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[13]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[14]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_Y[15]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[0]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[1]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[2]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[3]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[4]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[5]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[6]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[7]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[8]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[9]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[10]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[11]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[12]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[13]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[14]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (10041): Inferred latch for "ACC_X[15]" at eixo_x.vhd(433) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 433
+Info (12128): Elaborating entity "Temporizador2" for hierarchy "EIXO_X:inst7|ACELEROMETRO:SENSOR|Temporizador2:TEMP" File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(485): signal "CLOCK_EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 485
+Info (12128): Elaborating entity "GERADOR_CLOCK_100K" for hierarchy "EIXO_X:inst7|ACELEROMETRO:SENSOR|GERADOR_CLOCK_100K:CLOCK_2" File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 122
+Info (12128): Elaborating entity "LIMITADOR_3B" for hierarchy "EIXO_X:inst7|LIMITADOR_3B:LIMITADOR" File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at eixo_x.vhd(579): signal "VALOR_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 579
+Warning (10631): VHDL Process Statement warning at eixo_x.vhd(575): inferring latch(es) for signal or variable "TEMP", which holds its previous value in one or more paths through the process File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[0]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[1]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[2]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[3]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[4]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[5]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[6]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[7]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[8]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (10041): Inferred latch for "TEMP[9]" at eixo_x.vhd(575) File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 575
+Info (12128): Elaborating entity "HEX0" for hierarchy "HEX0:inst6"
+Info (12128): Elaborating entity "DecodificadorHEX2" for hierarchy "DecodificadorHEX2:inst4"
+Warning (275009): Pin "F0" not connected
+Warning (275009): Pin "F1" not connected
+Warning (275009): Pin "F2" not connected
+Warning (275009): Pin "F3" not connected
+Warning (275009): Pin "F4" not connected
+Warning (275008): Primitive "NOT" of instance "inst" not used
+Warning (275008): Primitive "NOT" of instance "inst2" not used
+Warning (275008): Primitive "NOT" of instance "inst3" not used
+Warning (275008): Primitive "NOT" of instance "inst4" not used
+Warning (275008): Primitive "NOT" of instance "inst5" not used
+Info (12128): Elaborating entity "Somador" for hierarchy "Somador:inst2"
+Info (12128): Elaborating entity "74283" for hierarchy "Somador:inst2|74283:inst1"
+Info (12130): Elaborated megafunction instantiation "Somador:inst2|74283:inst1"
+Info (12128): Elaborating entity "f74283" for hierarchy "Somador:inst2|74283:inst1|f74283:sub" File: c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74283.tdf Line: 24
+Info (12131): Elaborated megafunction instantiation "Somador:inst2|74283:inst1|f74283:sub", which is child of megafunction instantiation "Somador:inst2|74283:inst1" File: c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74283.tdf Line: 24
+Info (12128): Elaborating entity "DecodificadorHEX1" for hierarchy "DecodificadorHEX1:inst5"
+Warning (275009): Pin "F0" not connected
+Warning (275009): Pin "F4" not connected
+Warning (275008): Primitive "NOT" of instance "inst" not used
+Warning (275008): Primitive "NOT" of instance "inst5" not used
+Info (13014): Ignored 15 buffer(s)
+    Info (13015): Ignored 4 CARRY buffer(s)
+    Info (13019): Ignored 11 SOFT buffer(s)
+Info (13000): Registers with preset signals will power-up high File: C:/Users/fabui/Downloads/Sistemas_Digitais_Com_Acele (1)/Sistemas_Digitais/eixo_x.vhd Line: 137
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LD1" is stuck at VCC
+    Warning (13410): Pin "H03" is stuck at VCC
+    Warning (13410): Pin "H00" is stuck at VCC
+    Warning (13410): Pin "H26" is stuck at VCC
+    Warning (13410): Pin "H25" is stuck at GND
+    Warning (13410): Pin "H24" is stuck at GND
+    Warning (13410): Pin "H23" is stuck at GND
+    Warning (13410): Pin "H22" is stuck at GND
+    Warning (13410): Pin "H21" is stuck at GND
+    Warning (13410): Pin "H20" is stuck at GND
+    Warning (13410): Pin "F0" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 218 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 174 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 96 warnings
+    Info: Peak virtual memory: 4793 megabytes
+    Info: Processing ended: Fri May 23 11:28:23 2025
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:44
+
+

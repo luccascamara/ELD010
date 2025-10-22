@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri May 23 11:28:23 2025
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : Projeto2
+Top-level Entity Name : Sistema
+Family : MAX 10
+Total logic elements : 172
+    Total combinational functions : 164
+    Dedicated logic registers : 80
+Total registers : 80
+Total pins : 44
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
