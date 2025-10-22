@@ -1,0 +1,1 @@
+Projeto desenvolvidos na disciplina ELD010 – Sistemas Digitais I, do curso de Engenharia de Robôs no Centro Universitário FEI. Nessa disciplina, realizamos projetos no Quartus Prime 16.1 com Diagramas
